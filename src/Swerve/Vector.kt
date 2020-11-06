@@ -13,8 +13,8 @@ data class Vector(
     var bearing: Double = 0.0,
     var magnitude: Double = 0.0
 ){
-    val x get() = cos(bearing) * magnitude
-    val y get() = sin(bearing) * magnitude
+    val x get() = sin(bearing) * magnitude
+    val y get() = cos(bearing) * magnitude
 
     operator fun plus(other: Vector) : Vector{
         val newX = this.x + other.x
