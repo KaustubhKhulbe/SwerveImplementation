@@ -26,7 +26,10 @@ class Swerve(
         val b = atan2(controls.x, controls.y) - bearing
         val sV: Array<Vector> = Array(numOfWheels) {m vec b}
 
-        //Need to know why I need PI/2
+        /**
+         * It is PI/2 because atan2(...) makes it stick out, but to make a
+         * swastika shape, we need to add PI/2
+         */
         val rV: Array<Vector> = arrayOf(
                 controls.z vec atan2(-width, length) + PI/2,
                 controls.z vec atan2(width, length) + PI/2,
